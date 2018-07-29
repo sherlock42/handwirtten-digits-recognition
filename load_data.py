@@ -8,7 +8,7 @@ def load_data(FEATURES, LABELS):
 	#Features Dimensions
 	with open(train_features, "rb") as tf:
 		tf.seek(4)
-		file_features = tf.read(12) #Reading n characters
+		file_features = tf.read(12) 
 
 	#Label Dimensions
 	with open(train_labels, "rb") as tl:
@@ -16,7 +16,7 @@ def load_data(FEATURES, LABELS):
 		file_labels = tl.read(4)
 
 	features_dim  = st.unpack(">III", file_features) #(no_of_images, nRows, nColumns)
-	labels_dim = st.unpack(">I", file_labels) # (no_of_images)
+	labels_dim = st.unpack(">I", file_labels) #(no_of_images)
 
 	number_of_images = features_dim[0]
 	rows = features_dim[1]
