@@ -23,23 +23,24 @@ def load_data(FEATURES, LABELS):
 	rows = features_dim[1]
 	cols = features_dim[2]
 
-	with open(train_labels, "rb") as wtf:
-		wtf.seek(8)
-		labels = wtf.read()
+	#Labels data
+	with open(train_labels, "rb") as a:
+		a.seek(8)
+		labels = a.read()
 
 	labels = np.array(list(labels))
 
 	#Features data
-	with open(train_features, "rb") as wtfh:
-		wtfh.seek(16)
-		features = wtfh.read()
+	with open(train_features, "rb") as b:
+		b.seek(16)
+		features = b.read()
 
 	features = np.array(list(features)).reshape(number_of_images, rows, cols)
 
 	return features, labels
 
 '''
-For Test
+Test
 
 TRAINING_FEATURES = "mnist/train-images.idx3-ubyte"
 TRAINING_LABELS = "mnist/train-labels.idx1-ubyte"
