@@ -1,6 +1,5 @@
 import numpy as np
 import struct as st
-import matplotlib.pyplot as plt
 
 def load_data(FEATURES, LABELS):
 	train_features = FEATURES
@@ -47,6 +46,6 @@ TRAINING_LABELS = "mnist/train-labels.idx1-ubyte"
 TESTING_FEATURES = "mnist/t10k-images.idx3-ubyte"
 TESTING_LABELS = "mnist/t10k-labels.idx1-ubyte"
 
-f,l = load_train_data(TESTING_FEATURES, TESTING_LABELS)
+f,l = load_data(TESTING_FEATURES, TESTING_LABELS)
 print(l.shape)
 '''
